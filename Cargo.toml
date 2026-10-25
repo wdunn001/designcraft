@@ -142,3 +142,13 @@ hayro = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a
 hayro-interpret = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.7.0" }
 hayro-syntax = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.7.2" }
 hayro-jbig2 = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.3.0" }
+
+
+[patch."https://github.com/wdunn001/craft-libs"]
+craft-ui = { path = "../gh-craft-libs/crates/ui" }
+craft-cloud = { path = "../gh-craft-libs/crates/cloud" }
+
+
+[patch."https://github.com/storytold/craft-libs"]
+craft-ui = { path = "../gh-craft-libs/crates/ui" }
+craft-cloud = { path = "../gh-craft-libs/crates/cloud" }

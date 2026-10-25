@@ -776,9 +776,9 @@ name = "collabcraft-share"
 version = "0.1.0"
 source = "git+https://github.com/wdunn001/collab-craft?rev=3c77c3e#3c77c3e551e0597165f85d7921eeb68a4b4b289a"
 dependencies = [
- "craft-cloud 0.1.0 (git+https://github.com/wdunn001/craft-libs?rev=6f0a6d2)",
+ "craft-cloud",
  "craft-cloud-client",
- "craft-ui 0.1.0 (git+https://github.com/wdunn001/craft-libs?rev=6f0a6d2)",
+ "craft-ui",
  "wasm-bindgen-futures",
 ]
 
@@ -923,16 +923,6 @@ dependencies = [
 [[package]]
 name = "craft-cloud"
 version = "0.1.0"
-source = "git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454#289d562cc6e8b567819aee51f759a78f41a65454"
-dependencies = [
- "serde",
- "thiserror 2.0.21",
-]
-
-[[package]]
-name = "craft-cloud"
-version = "0.1.0"
-source = "git+https://github.com/wdunn001/craft-libs?rev=6f0a6d2#6f0a6d2f4c24140d5ea988e5e40a85b2c6058401"
 dependencies = [
  "serde",
  "thiserror 2.0.21",
@@ -943,7 +933,7 @@ name = "craft-cloud-client"
 version = "0.1.0"
 source = "git+https://github.com/wdunn001/collab-craft?rev=3c77c3e#3c77c3e551e0597165f85d7921eeb68a4b4b289a"
 dependencies = [
- "craft-cloud 0.1.0 (git+https://github.com/wdunn001/craft-libs?rev=6f0a6d2)",
+ "craft-cloud",
  "craft-collab",
  "js-sys",
  "log",
@@ -1006,21 +996,11 @@ dependencies = [
 [[package]]
 name = "craft-ui"
 version = "0.1.0"
-source = "git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454#289d562cc6e8b567819aee51f759a78f41a65454"
 dependencies = [
- "craft-cloud 0.1.0 (git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454)",
+ "craft-cloud",
  "egui",
  "serde",
  "serde_json",
-]
-
-[[package]]
-name = "craft-ui"
-version = "0.1.0"
-source = "git+https://github.com/wdunn001/craft-libs?rev=6f0a6d2#6f0a6d2f4c24140d5ea988e5e40a85b2c6058401"
-dependencies = [
- "craft-cloud 0.1.0 (git+https://github.com/wdunn001/craft-libs?rev=6f0a6d2)",
- "egui",
 ]
 
 [[package]]
@@ -1102,7 +1082,7 @@ dependencies = [
  "arboard",
  "collabcraft-share",
  "craft-cloud-client",
- "craft-ui 0.1.0 (git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454)",
+ "craft-ui",
  "designcraft-engine",
  "designcraft-ui-egui",
  "eframe",
@@ -1396,8 +1376,8 @@ dependencies = [
 name = "designcraft-ui-egui"
 version = "0.12.0"
 dependencies = [
- "craft-cloud 0.1.0 (git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454)",
- "craft-ui 0.1.0 (git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454)",
+ "craft-cloud",
+ "craft-ui",
  "designcraft-color",
  "designcraft-compose",
  "designcraft-doc",
@@ -1426,7 +1406,7 @@ name = "designcraft-web"
 version = "0.12.0"
 dependencies = [
  "collabcraft-share",
- "craft-cloud 0.1.0 (git+https://github.com/storytold/craft-libs?rev=289d562cc6e8b567819aee51f759a78f41a65454)",
+ "craft-cloud",
  "craft-cloud-client",
  "designcraft-engine",
  "designcraft-format",

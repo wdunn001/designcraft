@@ -912,7 +912,8 @@ pub fn start_screen(app: &mut DesignApp, ui: &mut egui::Ui) {
             });
             ui.add_space(20.0);
             community_card(app, ui);
-            recent_files(app, ui);
+            ui.add_space(20.0);
+            crate::cloud::open_page(app, ui);
             ui.add_space(24.0);
             ui.label(crate::rtl::widget(
                 ui,
@@ -946,11 +947,13 @@ pub fn start_screen(app: &mut DesignApp, ui: &mut egui::Ui) {
 }
 
 /// Recent files shown on the start screen (File › Open Recent has them all).
+#[allow(dead_code)]
 const START_SCREEN_RECENT: usize = 8;
 
 /// Start screen: the most recent files as cards with the first page's picture (saved in the file)
 /// and the name; the full path is the tooltip. A file that is gone is dimmed and says so when
 /// clicked. Nothing when the list is empty.
+#[allow(dead_code)]
 fn recent_files(app: &mut DesignApp, ui: &mut egui::Ui) {
     if app.session.prefs.recent_files.is_empty() {
         return;
@@ -1038,6 +1041,7 @@ fn recent_file_stat_at(ctx: &egui::Context, path: &str, now: f64) -> RecentStat 
 }
 
 /// The texture of a recent file's saved first-page picture, decoded once per file version.
+#[allow(dead_code)]
 fn recent_preview_texture(ctx: &egui::Context, path: &str, modified: Option<std::time::SystemTime>) -> Option<egui::TextureHandle> {
     type Cached = (Option<std::time::SystemTime>, Option<egui::TextureHandle>);
     let key = egui::Id::new(("recent_preview", path));

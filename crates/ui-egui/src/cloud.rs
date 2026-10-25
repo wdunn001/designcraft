@@ -264,6 +264,18 @@ impl CloudApp for DesignApp {
         Some(self.tr("The layout is saved as a DesignCraft layout (.designcraft) in the folder above."))
     }
 
+    fn recents(&self) -> Vec<String> {
+        self.session.prefs.recent_files.clone()
+    }
+
+    fn open_recent(&mut self, path: &str) {
+        let _ = self.run("file.open", json!({"path": path}));
+    }
+
+    fn browse_local(&mut self) {
+        let _ = self.run("file.open", json!({}));
+    }
+
     fn style(&self, ui: &Ui) -> craft_ui::cloud::CloudStyle {
         let t = Tokens::get(ui.ctx());
         craft_ui::cloud::CloudStyle {
@@ -281,22 +293,8 @@ impl CloudApp for DesignApp {
 
 // ---------------------------------------------------------------- where the pages are drawn
 
-/// The Cloud section of the start screen, DesignCraft's Open page.
-///
-/// Beside the local picker and never in place of it. A build with no service
-/// draws none of it. An account badge over an empty list reads to a user as a
-/// broken window.
+/// File › Open chrome: Recent, Cloud, Shared with me, and This computer.
 pub fn open_section(app: &mut DesignApp, ui: &mut Ui) {
-    if !available(app) {
-        return;
-    }
-    let t = Tokens::get(ui.ctx());
-    ui.add_space(22.0);
-    ui.label(crate::rtl::widget(
-        ui,
-        egui::RichText::new(crate::i18n::tr(&app.ui.language, "Cloud")).font(crate::theme::semibold(15.0)).color(t.text_strong),
-    ));
-    ui.add_space(8.0);
     open_page(app, ui);
 }
 
@@ -308,7 +306,7 @@ pub fn modal(app: &mut DesignApp, ctx: &egui::Context) {
     let Some(page) = app.cloud_page else { return };
     let lang = app.ui.language.clone();
     let title = match page {
-        Page::Open => crate::i18n::tr(&lang, "Open from the Cloud"),
+        Page::Open => crate::i18n::tr(&lang, "Open"),
         Page::Save => crate::i18n::tr(&lang, "Save to the Cloud"),
     };
     let mut close = false;
