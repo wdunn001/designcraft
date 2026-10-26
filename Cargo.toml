@@ -12,7 +12,7 @@ repository = "https://github.com/storytold/designcraft"
 
 [workspace.dependencies]
 # Shared reader and writer; publish the immutable revision before this consumer.
-craft-pdf = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.1.0", default-features = false }
+craft-pdf = {git = "https://github.com/wdunn001/craft-libs", branch = "quasarke", version = "=0.1.0", default-features = false}
 # internal
 designcraft-geom = { path = "crates/geom" }
 designcraft-color = { path = "crates/color" }
@@ -75,11 +75,11 @@ zip = { version = "3", default-features = false, features = ["deflate"] }
 indd = { git = "https://github.com/storytold/indd-utils", branch = "main" }
 
 # Which paths stored in documents may be followed (craft-libs).
-craft-docpath = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "82a24b006eefa036b43c09a67fb9a3fbd17ffe63" }
+craft-docpath = {version = "0.1.0", git = "https://github.com/wdunn001/craft-libs", branch = "quasarke"}
 # Atomic file replacement for saves and exports (craft-libs).
 craft-atomic = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "e9546e191dd62f2bc1d61eca45dbdc2f1b3c1d8e" }
 # File › Print through the system print spooler (craft-libs).
-craft-print = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "d991bf6792f8ade99c51358bf3c1d902c8cd96b5" }
+craft-print = {version = "0.1.0", git = "https://github.com/wdunn001/craft-libs", branch = "quasarke"}
 
 # ICC colour management: working spaces, transforms, black point compensation (craft-libs).
 craft-cms = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "e9546e191dd62f2bc1d61eca45dbdc2f1b3c1d8e" }
@@ -89,18 +89,18 @@ craft-cms = { version = "0.1.0", git = "https://github.com/storytold/craft-libs"
 # `cloud` brings the Open and Save pages, the account badge and the share
 # dialog that every Craft app offers. One revision of this crate has to be in
 # the graph: two are two different `ShareBackend` traits that never meet.
-craft-ui = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "289d562cc6e8b567819aee51f759a78f41a65454", features = ["serde", "cloud"] }
+craft-ui = {version = "0.1.0", git = "https://github.com/wdunn001/craft-libs", branch = "quasarke", features = ["serde", "cloud"]}
 # The vendor-neutral cloud vocabulary the pages speak: a file entry, a
 # capability, a share. Contracts only, with no IO and no vendor, so the wasm
 # build is unaffected.
-craft-cloud = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "289d562cc6e8b567819aee51f759a78f41a65454" }
+craft-cloud = {version = "0.1.0", git = "https://github.com/wdunn001/craft-libs", branch = "quasarke"}
 # How the desktop app reaches CollabCraft. No provider credential, no provider
 # URL and no provider protocol live in DesignCraft.
-craft-cloud-client = { git = "https://github.com/wdunn001/collab-craft", rev = "3c77c3e" }
+craft-cloud-client = {git = "https://github.com/wdunn001/collab-craft", branch = "quasarke"}
 # The share dialog's backend. craft-ui states the work and nothing in
 # craft-libs answers it, so the half that opens a socket comes from beside the
 # client.
-collabcraft-share = { git = "https://github.com/wdunn001/collab-craft", rev = "3c77c3e" }
+collabcraft-share = {git = "https://github.com/wdunn001/collab-craft", branch = "quasarke"}
 egui = "0.36"
 egui_extras = { version = "0.36", default-features = false, features = ["svg"] }
 eframe = { version = "0.36", default-features = false }
@@ -136,11 +136,11 @@ debug = 0
 
 # Opt-in cancelable macOS termination on the pinned winit 0.30 line.
 [patch.crates-io]
-krilla = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.8.2" }
+krilla = {git = "https://github.com/wdunn001/craft-libs", branch = "quasarke", version = "=0.8.2"}
 winit = { git = "https://github.com/storytold/winit.git", rev = "3d51077fd1a966f84df9ef287839dc84fd5b4ca7" }
 hayro = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.7.1" }
 hayro-interpret = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.7.0" }
-hayro-syntax = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.7.2" }
+hayro-syntax = {git = "https://github.com/wdunn001/craft-libs", branch = "quasarke", version = "=0.7.2"}
 hayro-jbig2 = { git = "https://github.com/storytold/craft-libs", rev = "89dcbb3060377a26c99a6d80caa16084366704c4", version = "=0.3.0" }
 
 
@@ -149,6 +149,6 @@ craft-ui = { path = "../gh-craft-libs/crates/ui" }
 craft-cloud = { path = "../gh-craft-libs/crates/cloud" }
 
 
-[patch."https://github.com/storytold/craft-libs"]
+[patch."https://github.com/wdunn001/craft-libs"]
 craft-ui = { path = "../gh-craft-libs/crates/ui" }
 craft-cloud = { path = "../gh-craft-libs/crates/cloud" }
